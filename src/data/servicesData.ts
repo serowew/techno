@@ -14,7 +14,7 @@ export const servicesData: Service[] = [
     desc: "Personalized sessions tailored to your learning pace and goals.",
     tag: "Popular",
     icon: "🎯",
-    price: "₱300/hr",
+    price: "₱30/hr",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const servicesData: Service[] = [
     desc: "Quick assistance for assignments and difficult problems.",
     tag: "Quick Help",
     icon: "📝",
-    price: "₱150/hr",
+    price: "₱15/hr",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const servicesData: Service[] = [
     desc: "Relaxed, pressure-free sessions with friendly tutors.",
     tag: "Beginner",
     icon: "😊",
-    price: "₱200/hr",
+    price: "₱20/hr",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const servicesData: Service[] = [
     desc: "Learn coding, tools, and real-world practical skills.",
     tag: "Skill",
     icon: "💻",
-    price: "₱350/hr",
+    price: "₱35/hr",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ export const servicesData: Service[] = [
     desc: "Prepare for exams with focused guided review sessions.",
     tag: "Focused",
     icon: "📚",
-    price: "₱250/hr",
+    price: "₱25/hr",
   },
   {
     id: 6,
@@ -54,7 +54,7 @@ export const servicesData: Service[] = [
     desc: "Learn together with peers in a collaborative environment.",
     tag: "Beginner",
     icon: "👥",
-    price: "₱100/hr",
+    price: "₱10/hr",
   },
 ];
 

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import EnhancedModal from "./EnhancedModal";
-import { tutorsData } from "../data/tutorsData";
-import type { Tutor } from "../data/tutorsData";
+import { tutorsData } from "../data/devs";
+import type { Tutor } from "../data/devs";
 import "../css/carousel.css";
 
 const AdvancedCarousel = () => {
@@ -107,7 +107,7 @@ const AdvancedCarousel = () => {
       <div className="carousel-wrapper">
         {/* HEADER — grouped with carousel */}
         <div className="carousel-header">
-          <h1>OUR EXPERTsss</h1>
+       
           <p>Click on any expert card to view their profile</p>
         </div>
 

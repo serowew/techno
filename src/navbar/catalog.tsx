@@ -10,12 +10,16 @@ function Catalog() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [search, setSearch] = useState("");
 
-  // If navigated from Services page with a filter pre-selected
+  // If navigated from Services page with a filter pre-selected,
+  // or from Dashboard "View Profile" with a search name pre-filled
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const tag = params.get("filter");
+    const searchParam = params.get("search");
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (tag) setActiveFilter(tag);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (searchParam) setSearch(searchParam);
   }, [location.search]);
 
   const filtered = catalogData.filter((tutor) => {

@@ -1,0 +1,312 @@
+/* ── PAGE ── */
+.mybk-page {
+  min-height: 100vh;
+  padding: 40px 32px 80px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ── HEADER ── */
+.mybk-header {
+  text-align: center;
+  max-width: 600px;
+}
+
+.mybk-header h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+}
+
+.mybk-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+/* ── STATS ROW ── */
+.mybk-stats {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 16px 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.mybk-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.mybk-stat-num {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0074e4;
+  line-height: 1;
+}
+
+.mybk-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.mybk-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: #f0f0f0;
+}
+
+/* ── FILTERS ── */
+.mybk-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Reuses .filter-btn from services.css */
+.mybk-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.filter-btn.active .mybk-filter-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── EMPTY STATE ── */
+.mybk-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 60px 20px;
+  color: #999;
+  text-align: center;
+}
+
+.mybk-empty-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.mybk-empty p {
+  font-size: 16px;
+  margin: 0;
+  color: #888;
+}
+
+.mybk-empty-sub {
+  font-size: 14px !important;
+  color: #aaa !important;
+}
+
+/* ── LIST ── */
+.mybk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* ── BOOKING CARD ── */
+.mybk-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  border-left: 4px solid transparent;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.mybk-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.mybk-card--upcoming  { border-left-color: #16a34a; }
+.mybk-card--completed { border-left-color: #0074e4; }
+.mybk-card--cancelled {
+  border-left-color: #dc2626;
+  opacity: 0.75;
+}
+
+/* ── AVATAR ── */
+.mybk-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+/* ── INFO ── */
+.mybk-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.mybk-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mybk-tutor-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 2px;
+}
+
+.mybk-subject {
+  font-size: 12px;
+  color: #0074e4;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 0;
+}
+
+.mybk-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── DETAILS ── */
+.mybk-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mybk-detail {
+  font-size: 12px;
+  color: #666;
+  background: #f7f8fc;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.mybk-cost {
+  font-weight: 700;
+  color: #1a1a1a;
+  background: rgba(0, 116, 228, 0.08);
+}
+
+/* ── MESSAGE ── */
+.mybk-message {
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
+  margin: 0;
+  padding: 8px 12px;
+  background: #f9f9fb;
+  border-radius: 8px;
+  border-left: 3px solid #e0e4ee;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── ACTIONS ── */
+.mybk-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mybk-cancel-btn {
+  padding: 7px 14px;
+  background: white;
+  border: 2px solid #dc2626;
+  color: #dc2626;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.mybk-cancel-btn:hover {
+  background: #dc2626;
+  color: white;
+}
+
+.mybk-remove-btn {
+  padding: 7px 14px;
+  background: white;
+  border: 2px solid #ccc;
+  color: #888;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.mybk-remove-btn:hover {
+  background: #f0f0f0;
+  color: #555;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .mybk-page {
+    padding: 24px 16px 60px;
+  }
+
+  .mybk-card {
+    flex-wrap: wrap;
+  }
+
+  .mybk-actions {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .mybk-stats {
+    gap: 16px;
+    padding: 14px 20px;
+  }
+}

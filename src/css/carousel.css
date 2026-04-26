@@ -2,14 +2,157 @@
    MODERN 3D CAROUSEL STYLES
    ========================================= */
 
+/* ── Contact page layout ─────────────────────── */
+
+.contact-page {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  padding-bottom: 80px;
+}
+
+.contact-hero {
+  text-align: center;
+  padding: 64px 24px 0;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+
+.contact-gradient {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+.contact-hero-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/*
+  Enough top padding so the carousel's front-facing cards
+  (which push toward the viewer via translateZ + perspective)
+  never reach up into the hero text above.
+  No z-index tricks — just space.
+*/
+.contact-carousel-wrap {
+  width: 100%;
+  padding-top: 500px;
+}
+
+/* Hide the carousel's own subtitle — contact-hero covers it */
+.contact-carousel-wrap .carousel-header {
+  display: none;
+}
+
+/* Reach Out section */
+.contact-reach {
+  padding: 48px 32px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-reach-inner {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.55);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  border-radius: 24px;
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.contact-reach-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+
+.contact-reach-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 auto 36px;
+  max-width: 480px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  background: rgba(0,116,228,0.05);
+  border: 1px solid rgba(0,116,228,0.12);
+  border-radius: 16px;
+  padding: 28px 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,116,228,0.12);
+}
+
+.contact-card-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.contact-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.contact-card p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Carousel wrapper ────────────────────────── */
+
 .carousel-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
   width: 100%;
-  padding: 40px 20px 60px;
-  margin-top: 20px;
+  padding: 0 20px 40px;
 }
 
 .carousel-header {
@@ -18,23 +161,22 @@
 
 .carousel-header h1 {
   margin: 0 0 8px;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(20px, 4vw, 36px);
   font-weight: 800;
-  color: #1a1a1a;
+  color: var(--text-primary);
   letter-spacing: 1px;
 }
 
 .carousel-header p {
   font-size: 15px;
-  color: #666;
+  color: var(--text-muted);
   margin: 0;
-  margin-bottom: 440px;
 }
 
 .carousel-section {
   perspective: 1500px;
   width: min(90vw, 900px);
-  /* height set dynamically by JS — no dead space */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,6 +254,7 @@
 }
 
 .carousel-card-name {
+  font-family: 'Syne', sans-serif;
   font-size: clamp(14px, 1.8vw, 18px);
   font-weight: 700;
   color: #1a1a1a;
@@ -121,7 +264,7 @@
 .carousel-card-role {
   font-size: 11px;
   font-weight: 600;
-  color: #0074e4;
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0;
@@ -134,8 +277,6 @@
   margin: 0;
   flex-grow: 1;
 }
-
-
 
 /* ============================================
    ENHANCED MODAL STYLES
@@ -210,6 +351,7 @@
 }
 
 .modal-titlee {
+  font-family: 'Syne', sans-serif;
   font-size: 32px;
   font-weight: 800;
   margin: 0 0 8px;
@@ -266,7 +408,7 @@
 .modal-section-titlee {
   font-size: 14px;
   font-weight: 700;
-  color: #0074e4;
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0;
@@ -287,7 +429,7 @@
 
 .modal-tagg {
   background: rgba(0, 116, 228, 0.1);
-  color: #0074e4;
+  color: var(--accent);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 12px;
@@ -306,9 +448,9 @@
   margin-top: 8px;
 }
 
-.modal-buttonn {
+
+.modal-button.secondaryy {
   padding: 14px 24px;
-  border: none;
   border-radius: 12px;
   font-size: 14px;
   font-weight: 700;
@@ -316,23 +458,10 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.modal-button.primaryy {
-  background: linear-gradient(135deg, #0074e4 0%, #0056b3 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 116, 228, 0.3);
-}
-
-.modal-button.primaryy:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 116, 228, 0.4);
-}
-
-.modal-button.secondaryy {
-  background: rgba(0, 116, 228, 0.1);
-  color: #0074e4;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent);
   border: 1px solid rgba(0, 116, 228, 0.3);
+  position: relative;
 }
 
 .modal-button.secondaryy:hover {
@@ -343,19 +472,25 @@
    RESPONSIVE
    ========================================= */
 
+@media (max-width: 1024px) {
+  .contact-carousel-wrap { padding-top: 160px; }
+}
+
 @media (max-width: 768px) {
-  .carousel-wrapper { gap: 16px; padding: 24px 10px 40px; }
-  .carousel-btn { width: 40px; height: 40px; font-size: 15px; }
-  .modal-contentt { width: 95%; max-height: 95vh; }
-  .modal-headerr { height: 220px; }
-  .modal-bodyy { padding: 24px; gap: 16px; }
-  .modal-ctaa { grid-template-columns: 1fr; }
-  .modal-titlee { font-size: 24px; }
+  .contact-carousel-wrap { padding-top: 300px; }
+  .carousel-wrapper      { gap: 16px; padding: 0 10px 32px; }
+  .contact-reach-inner   { padding: 32px 24px; }
+  .modal-contentt        { width: 95%; max-height: 95vh; }
+  .modal-headerr         { height: 220px; }
+  .modal-bodyy           { padding: 24px; gap: 16px; }
+  .modal-ctaa            { grid-template-columns: 1fr; }
+  .modal-titlee          { font-size: 24px; }
 }
 
 @media (max-width: 480px) {
-  .carousel-btn { width: 36px; height: 36px; font-size: 13px; }
-  .modal-headerr { height: 180px; }
-  .modal-titlee { font-size: 20px; }
-  .modal-bodyy { padding: 16px; }
+  .contact-hero          { padding: 48px 20px 0; }
+  .contact-carousel-wrap { padding-top: 80px; }
+  .modal-headerr         { height: 180px; }
+  .modal-titlee          { font-size: 20px; }
+  .modal-bodyy           { padding: 16px; }
 }

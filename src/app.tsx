@@ -9,6 +9,8 @@ import About from "./navbar/about";
 import Contact from "./navbar/contact";
 import Catalog from "./navbar/catalog";
 import Intro from "./components/Intro";
+import MyBookings from "./pages/MyBookings";
+import Profile from "./components/profile";
 
 import "./css/style.css";
 import "./css/intro.css";
@@ -94,9 +96,21 @@ function App() {
           element={isLoggedIn ? <Catalog /> : <Navigate to="/" />}
         />
 
+                <Route
+          path="/bookings"
+          element={isLoggedIn ? <MyBookings /> : <Navigate to="/" />}
+        />
+
+                        <Route
+          path="/profile"
+          element={isLoggedIn ? <Profile /> : <Navigate to="/" />}
+        />
+
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
+
+    
   );
 }
 

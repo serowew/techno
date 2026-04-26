@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../css/style.css";
 import { useNavigate } from "react-router-dom";
+import { userService } from "../data/userService";
+import "../css/style.css";
 
 type Props = {
   onLogin: () => void;
@@ -9,32 +10,43 @@ type Props = {
 const Login = ({ onLogin }: Props) => {
   const navigate = useNavigate();
 
-  const [isLogin, setIsLogin] = useState(true);
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [isLogin, setIsLogin]     = useState(true);
+  const [email, setEmail]         = useState("");
+  const [password, setPassword]   = useState("");
+  const [name, setName]           = useState("");
+  const [error, setError]         = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
 
     if (!email || !password || (!isLogin && !name)) {
-      alert("Please fill in all fields");
+      setError("Please fill in all fields.");
       return;
     }
 
     if (isLogin) {
+      // Validate against stored credentials
+      if (!userService.login(email, password)) {
+        setError("Incorrect email or password.");
+        return;
+      }
       onLogin();
       navigate("/");
     } else {
-      alert("Account created (mock) — switch to login now!");
+      // Register: persist name, email, password to localStorage
+      userService.register(name.trim(), email.trim(), password);
+      setError("");
+      alert("Account created! You can now log in.");
       setIsLogin(true);
+      setName("");
+      setEmail("");
+      setPassword("");
     }
   };
 
   return (
     <div className="login-container cinematic-fade-in">
-      {/* soft glow background */}
       <div className="login-glow" />
 
       <h1 className="login-title">
@@ -83,6 +95,12 @@ const Login = ({ onLogin }: Props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
+        {error && (
+          <p style={{ color: "#f87171", fontSize: "13px", margin: "0" }}>
+            ⚠ {error}
+          </p>
+        )}
+
         <button type="submit" className="login-button">
           {isLogin ? "Login" : "Create Account"}
         </button>
@@ -90,7 +108,7 @@ const Login = ({ onLogin }: Props) => {
         <button
           type="button"
           className="register-button"
-          onClick={() => setIsLogin(!isLogin)}
+          onClick={() => { setIsLogin(!isLogin); setError(""); }}
         >
           {isLogin
             ? "Don't have an account? Register"

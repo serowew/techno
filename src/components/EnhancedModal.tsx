@@ -60,7 +60,7 @@ const EnhancedModal: React.FC<EnhancedModalProps> = ({ isOpen, onClose, tutorDat
 
           {/* CTA BUTTONS */}
           <div className="modal-ctaa">
-            <button className="modal-button primaryy">Book Session</button>
+            
             <button className="modal-button secondaryy">Send Message</button>
           </div>
         </div>
